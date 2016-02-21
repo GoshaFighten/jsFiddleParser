@@ -22,7 +22,7 @@ namespace jsFiddleParser {
             detailsInfo.Authors = GetAuthor(doc);
             detailsInfo.Resources = ProcessResources(doc);
             detailsInfo.Wrap = GetWrapMode(doc);
-            var saveFolder = folder + "/" + fileName + "/";
+            var saveFolder = folder + "/" + Path.GetFileNameWithoutExtension(path) + "/";
             if (!Directory.Exists(saveFolder)) {
                 Directory.CreateDirectory(saveFolder);
             }
