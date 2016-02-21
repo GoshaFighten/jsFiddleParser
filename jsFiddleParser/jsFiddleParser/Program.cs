@@ -14,7 +14,7 @@ namespace jsFiddleParser {
                 return;
             var path = args[0];
             var folder = Path.GetDirectoryName(path);
-            string fileName = Path.GetFileNameWithoutExtension(path);
+            string fileName = "demo";
             HtmlDocument doc = new HtmlDocument();
             doc.Load(path);
             var detailsInfo = new DetailsInfo();
