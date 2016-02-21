@@ -64,6 +64,8 @@ namespace jsFiddleParser {
         private static void WriteDetails(DetailsInfo detailsInfo, string folder, string name) {
             var fullPath = folder + name + ".details";
             StringBuilder builder = new StringBuilder();
+            builder.AppendLine("/*");
+            builder.AppendLine("---");
             builder.AppendLine(string.Format("name: {0}", detailsInfo.Name));
             builder.AppendLine("authors:");
             builder.AppendLine(string.Format("  - {0}", detailsInfo.Authors));
@@ -72,6 +74,8 @@ namespace jsFiddleParser {
                 builder.AppendLine(string.Format("  - {0}", item));
             }
             builder.AppendLine(string.Format("wrap: {0}", detailsInfo.Wrap));
+            builder.AppendLine("...");
+            builder.AppendLine("*/");
             File.WriteAllText(fullPath, builder.ToString());
         }
 
